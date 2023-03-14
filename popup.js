@@ -1,4 +1,5 @@
 let isolateButton = document.getElementById('isolate-button');
+const wideScreenElement = document.querySelector('use[xlink\\:href="#wide-view"]');
 
 // 버튼을 클릭했을때, 현재 페이지 설정을 바꿉니다.
 
@@ -11,8 +12,18 @@ isolateButton.addEventListener("click", async () => {
     });
 });
 
+wideScreenElement.addEventListener("click", async () => {
+    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: setPageWatchChat,
+    });
+});
+
 // 이 함수의 본문은 컨텐츠 스크립트로 실행됩니다.
 // 현재 페이지
+// test------------------
 function setPageWatchChat() {
     var windowWidth = window.innerWidth - 20;
     var windowHeight = window.innerHeight;
