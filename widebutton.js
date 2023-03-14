@@ -1,5 +1,4 @@
-const elements = document.getElementsByClassName('nng_btn_control wide');
-const wideScreenElement = elements[0];
+const elements = document.querySelector('.nng_btn_control.wide');
 
 // wideScreenElement.addEventListener("click", async () => {
 //     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
