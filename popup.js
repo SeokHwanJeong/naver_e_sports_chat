@@ -67,6 +67,18 @@ function setPageWatchChat() {
         element.style.width = (windowHeight*1.7) + "px";
         element.style.height = windowHeight + "px";
     }
+
+    //live_inView 에서 크기조절
+    var elements = document.querySelectorAll('[class*="live_inView"]');
+    var element = elements[0]
+    
+    element.style.width = videoWidth + "px";
+    element.style.height = (videoWidth/1.7) + "px";
+    
+    if((videoWidth/1.7) > windowHeight){
+        element.style.width = (windowHeight*1.7) + "px";
+        element.style.height = windowHeight + "px";
+    }
     
     //live_pc_content width 조절
     var elements = document.querySelectorAll('[class*="live_pc_content"]');

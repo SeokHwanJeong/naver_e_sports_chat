@@ -1,6 +1,6 @@
 {
   "name": "네이버 e스포츠 동영상 채팅 같이보기",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 3,
   "description": "네이버 e스포츠 라이브 사이트에서 버튼을 누르면 화면에 맞춰서 동영상 및 채팅창 크기 변경 및 이동",
   "host_permissions": ["<all_urls>"],
