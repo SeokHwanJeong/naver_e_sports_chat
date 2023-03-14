@@ -2,7 +2,7 @@ setTimeout(function() {
     const wideScreenElement = document.querySelector('.nng_btn_control.wide');
 
     wideScreenElement.addEventListener("click", setPageWatchChat);
-}, 2000);
+}, 1000);
 
 // wideScreenElement.addEventListener("click", async () => {
 //     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -61,6 +61,18 @@ function setPageWatchChat() {
     element.style.width = videoWidth + "px";
     element.style.height = (videoWidth/1.7) + "px";
     element.style.margin = "0px"
+    
+    if((videoWidth/1.7) > windowHeight){
+        element.style.width = (windowHeight*1.7) + "px";
+        element.style.height = windowHeight + "px";
+    }
+
+    //live_inView 에서 크기조절
+    var elements = document.querySelectorAll('[class*="live_inView"]');
+    var element = elements[0]
+    
+    element.style.width = videoWidth + "px";
+    element.style.height = (videoWidth/1.7) + "px";
     
     if((videoWidth/1.7) > windowHeight){
         element.style.width = (windowHeight*1.7) + "px";
