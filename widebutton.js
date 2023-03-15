@@ -3,16 +3,19 @@ var flag = true;
 setTimeout(function() {
     const wideScreenElement = document.querySelector('.nng_btn_control.wide');
     
-    // wideScreenElement.addEventListener("click", setOriginalChat);
+    // wideScreenElement.addEventListener("click", setPageWatchChat);
+    wideScreenElement.addEventListener("click", function(){
+        if(flag){
+            setPageWatchChat();
+            flag = false;
+        }
+        else{
+            setOriginalChat();
+            flag = true;
+        }
+    });
 
-    if(flag){
-        flag = false;
-        wideScreenElement.addEventListener("click", setPageWatchChat);
-    }
-    else{
-        flag = true;
-        wideScreenElement.addEventListener("click", setOriginalChat);
-    }
+    
     
 }, 1000);
 
