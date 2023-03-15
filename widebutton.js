@@ -125,49 +125,47 @@ function setPageWatchChat() {
 
 function setOriginalChat() {
     const header = document.getElementById("header");
-    header.style.opacity = "0";
-    header.style.width = videoWidth + "px";
-    header.removeAttribute('style');
+    header.style = '';
     
     // live_container__vlznp에서 padding-top을 0px
     var elements = document.querySelectorAll('[class*="live_container"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
     //live_player_wrap 비디오 width 조절
     var elements = document.querySelectorAll('[class*="live_player_wrap"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
     
     //live_video_wrap__1LuN7 에서 크기조절
     //live_video_wrap__1LuN7 에서 마진 조절
     var elements = document.querySelectorAll('[class*="live_video_wrap"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
 
     //live_inView 에서 크기조절
     var elements = document.querySelectorAll('[class*="live_inView"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
     
     //live_pc_content width 조절
     var elements = document.querySelectorAll('[class*="live_pc_content"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
     
     var elements = document.querySelectorAll('[class*="live_content_left"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
     
     //live_content_right__16wTl 에서 탑 마진 조절
     var elements = document.querySelectorAll('[class*="live_content_right"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
     
     var elements = document.querySelectorAll('[class*="chat_chatting_area"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
 
     var elements = document.querySelectorAll('[class*="chat_content"]');
     var element = elements[0]
-    element.removeAttribute('style');
+    element.style = ''
 }
