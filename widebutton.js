@@ -1,17 +1,18 @@
+var flag = true;
 
 setTimeout(function() {
     const wideScreenElement = document.querySelector('.nng_btn_control.wide');
-    var flag = true;
-    wideScreenElement.addEventListener("click", setOriginalChat);
+    
+    // wideScreenElement.addEventListener("click", setOriginalChat);
 
-    // if(flag){
-    //     wideScreenElement.addEventListener("click", setPageWatchChat);
-    //     flag = false;
-    // }
-    // else{
-    //     wideScreenElement.addEventListener("click", setOriginalChat);
-    //     flag = true;
-    // }
+    if(flag){
+        flag = false;
+        wideScreenElement.addEventListener("click", setPageWatchChat);
+    }
+    else{
+        flag = true;
+        wideScreenElement.addEventListener("click", setOriginalChat);
+    }
     
 }, 1000);
 
