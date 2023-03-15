@@ -114,14 +114,7 @@ function setOriginalChat() {
     const header = document.getElementById("header");
     header.style.removeProperty('opacity');
     header.style.removeProperty('width');
-    
-    header.addEventListener("mouseover", () => {
-        header.style.opacity = "1";
-    });
-    
-    header.addEventListener("mouseout", () => {
-        header.style.opacity = "0";
-    });
+    header.style.removeProperty('opacity');
     
     // 잡다한거 지움
     var elements = document.querySelectorAll('[class*="lounge_cover"]');
