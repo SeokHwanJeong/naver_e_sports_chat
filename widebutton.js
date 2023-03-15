@@ -2,26 +2,18 @@
 setTimeout(function() {
     const wideScreenElement = document.querySelector('.nng_btn_control.wide');
     var flag = true;
+    wideScreenElement.addEventListener("click", setOriginalChat);
 
-    if(flag){
-        wideScreenElement.addEventListener("click", setPageWatchChat);
-        flag = false;
-    }
-    else{
-        wideScreenElement.addEventListener("click", setOriginalChat);
-        flag = true;
-    }
+    // if(flag){
+    //     wideScreenElement.addEventListener("click", setPageWatchChat);
+    //     flag = false;
+    // }
+    // else{
+    //     wideScreenElement.addEventListener("click", setOriginalChat);
+    //     flag = true;
+    // }
     
 }, 1000);
-
-// wideScreenElement.addEventListener("click", async () => {
-//     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-//     chrome.scripting.executeScript({
-//     target: { tabId: tab.id },
-//     function: setPageWatchChat,
-//     });
-// });
 
 function setPageWatchChat() {
     var windowWidth = window.innerWidth - 20;
@@ -101,17 +93,6 @@ function setPageWatchChat() {
     
     element.style.marginTop = (-videoWidth/1.7) + "px";
     
-    // setTimeout(function() {
-    //     var elements = document.querySelectorAll('[class*="chat_chatting_area"]');
-    //     var element = elements[0]
-    
-    //     element.style.maxHeight = (videoWidth/1.7) + "px";
-    
-    //     var elements = document.querySelectorAll('[class*="chat_content"]');
-    //     var element = elements[0]
-    
-    //     element.style.height = (videoWidth/1.7) + "px";
-    // }, 2000);
     var elements = document.querySelectorAll('[class*="chat_chatting_area"]');
     var element = elements[0]
 
