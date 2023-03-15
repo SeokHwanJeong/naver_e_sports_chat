@@ -1,7 +1,7 @@
-var flag = true;
 
 setTimeout(function() {
     const wideScreenElement = document.querySelector('.nng_btn_control.wide');
+    var flag = true;
 
     if(flag){
         wideScreenElement.addEventListener("click", setPageWatchChat);
@@ -124,13 +124,6 @@ function setPageWatchChat() {
 }
 
 function setOriginalChat() {
-    
-    // 헤더를 마우스 올릴때만 보이게
-    var elements = document.querySelectorAll('[class*="header_content"]');
-    header_content = elements[0];
-    var elements = document.querySelectorAll('[class*="header_sub_menu"]');
-    sub_menu = elements[0];
-    
     const header = document.getElementById("header");
     header.style.opacity = "0";
     header.style.width = videoWidth + "px";
