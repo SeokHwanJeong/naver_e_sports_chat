@@ -16,14 +16,15 @@ setTimeout(function() {
     });
 }, 1000);
 
-function onMouseOver(element) {
-  element.style.opacity = "1";
+function onMouseOverHandler() {
+  const header = document.getElementById("header");
+  header.style.opacity = "1";
 }
   
-function onMouseOut(element) {
-  element.style.opacity = "0";
+function onMouseOutHandler() {
+  const header = document.getElementById("header");
+  header.style.opacity = "0";
 }
-  
 
 function setPageWatchChat() {
     var windowWidth = window.innerWidth - 20;
@@ -36,8 +37,8 @@ function setPageWatchChat() {
     header.style.opacity = "0";
     header.style.width = videoWidth + "px";
     
-    header.addEventListener("mouseover", () => onMouseOver(header));
-    header.addEventListener("mouseout", () => onMouseOut(header));
+    header.addEventListener("mouseover", onMouseOverHandler);
+    header.addEventListener("mouseout", onMouseOutHandler);
     
     // 잡다한거 지움
     var elements = document.querySelectorAll('[class*="lounge_cover"]');
@@ -113,13 +114,10 @@ function setOriginalChat() {
     // 헤더를 마우스 올릴때만 보이게
     
     const header = document.getElementById("header");
-    // header.style.removeProperty('opacity');
-    // header.style.removeProperty('width');
-    // header.style.removeProperty('opacity');
-    header.removeAttribute('style');
     
-    header.removeEventListener("mouseover", () => onMouseOver(header));
-    header.removeEventListener("mouseout", () => onMouseOut(header));
+    header.removeEventListener("mouseover", onMouseOverHandler);
+    header.removeEventListener("mouseout", onMouseOutHandler);
+    header.removeAttribute('style');
     
     // 잡다한거 지움
     var elements = document.querySelectorAll('[class*="lounge_cover"]');
@@ -128,14 +126,12 @@ function setOriginalChat() {
     
     // live_container__vlznp에서 padding-top을 0px
     var elements = document.querySelectorAll('[class*="live_container"]');
-    // elements[0].style.removeProperty('padding-top');
     elements[0].removeAttribute('style');
     
     //live_player_wrap 비디오 width 조절
     var elements = document.querySelectorAll('[class*="live_player_wrap"]');
     var element = elements[0]
     
-    // element.style.removeProperty('width');
     element.removeAttribute('style');
     
     //live_video_wrap__1LuN7 에서 크기조절
@@ -143,49 +139,38 @@ function setOriginalChat() {
     var elements = document.querySelectorAll('[class*="live_video_wrap"]');
     var element = elements[0]
     
-    // element.style.removeProperty('width');
-    // element.style.removeProperty('height');
-    // element.style.removeProperty('margin');
     element.removeAttribute('style');
 
     //live_inView 에서 크기조절
     var elements = document.querySelectorAll('[class*="live_inView"]');
     var element = elements[0]
     
-    // element.style.removeProperty('width');
-    // element.style.removeProperty('height');
     element.removeAttribute('style');
 
     //live_pc_content width 조절
     var elements = document.querySelectorAll('[class*="live_pc_content"]');
     var element = elements[0]
     
-    // element.style.removeProperty('width');
-    // element.style.removeProperty('margin');
     element.removeAttribute('style');
     
     var elements = document.querySelectorAll('[class*="live_content_left"]');
     var element = elements[0]
     
-    // element.style.removeProperty('margin-top');
     element.removeAttribute('style');
     
     //live_content_right__16wTl 에서 탑 마진 조절
     var elements = document.querySelectorAll('[class*="live_content_right"]');
     var element = elements[0]
     
-    // element.style.removeProperty('margin-top');
     element.removeAttribute('style');
     
     var elements = document.querySelectorAll('[class*="chat_chatting_area"]');
     var element = elements[0]
 
-    // element.style.removeProperty('max-height');
     element.removeAttribute('style');
 
     var elements = document.querySelectorAll('[class*="chat_content"]');
     var element = elements[0]
 
-    // element.style.removeProperty('height');
     element.removeAttribute('style');
 }
