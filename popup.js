@@ -1,18 +1,28 @@
 let isolateButton = document.getElementById('isolate-button');
 
+var flag = true;
 // 버튼을 클릭했을때, 현재 페이지 설정을 바꿉니다.
-
 isolateButton.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-    chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageWatchChat,
-    });
+    if(flag){
+        flag = false;
+        chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        function: setPageWatchChat,
+        });
+    }
+    else{
+        flag = true;
+        chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        function: setOriginalChat,
+        });
+    }
 });
 
 // 이 함수의 본문은 컨텐츠 스크립트로 실행됩니다.
 // 현재 페이지
+// test------------------
 function setPageWatchChat() {
     var windowWidth = window.innerWidth - 20;
     var windowHeight = window.innerHeight;
@@ -61,6 +71,18 @@ function setPageWatchChat() {
     element.style.width = videoWidth + "px";
     element.style.height = (videoWidth/1.7) + "px";
     element.style.margin = "0px"
+    
+    if((videoWidth/1.7) > windowHeight){
+        element.style.width = (windowHeight*1.7) + "px";
+        element.style.height = windowHeight + "px";
+    }
+
+    //live_inView 에서 크기조절
+    var elements = document.querySelectorAll('[class*="live_inView"]');
+    var element = elements[0]
+    
+    element.style.width = videoWidth + "px";
+    element.style.height = (videoWidth/1.7) + "px";
     
     if((videoWidth/1.7) > windowHeight){
         element.style.width = (windowHeight*1.7) + "px";
