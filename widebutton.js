@@ -1,9 +1,7 @@
 var flag = true;
-
 setTimeout(function() {
     const wideScreenElement = document.querySelector('.nng_btn_control.wide');
     
-    // wideScreenElement.addEventListener("click", setPageWatchChat);
     wideScreenElement.addEventListener("click", function(){
         if(flag){
             setPageWatchChat();
@@ -32,7 +30,6 @@ function setPageWatchChat() {
     var videoWidth = windowWidth - 360
 
     // 헤더를 마우스 올릴때만 보이게
-    
     const header = document.getElementById("header");
     header.style.opacity = "0";
     header.style.width = videoWidth + "px";
