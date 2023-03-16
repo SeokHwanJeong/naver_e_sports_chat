@@ -1,4 +1,5 @@
 var flag = true;
+  
 setTimeout(function() {
     const wideScreenElement = document.querySelector('.nng_btn_control.wide');
     
@@ -15,12 +16,12 @@ setTimeout(function() {
 }, 1000);
 
 function onMouseOverHandler() {
-  const header = document.getElementById("header");
+//   const header = document.getElementById("header");
   header.style.opacity = "1";
 }
   
 function onMouseOutHandler() {
-  const header = document.getElementById("header");
+//   const header = document.getElementById("header");
   header.style.opacity = "0";
 }
 
