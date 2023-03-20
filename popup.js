@@ -23,12 +23,13 @@ isolateButton.addEventListener("click", async () => {
 // 이 함수의 본문은 컨텐츠 스크립트로 실행됩니다.
 // 현재 페이지
 // test------------------
-function onMouseOverHandler() {
-    const header = document.getElementById("header");
-    header.style.opacity = "1";
-  }
-    
-  function onMouseOutHandler() {
+  
+function setPageWatchChat() {
+    var windowWidth = window.innerWidth - 20;
+    var windowHeight = window.innerHeight;
+    var videoWidth = windowWidth - 360
+
+    // 헤더를 마우스 올릴때만 보이게
     const header = document.getElementById("header");
     header.style.opacity = "0";
   }
