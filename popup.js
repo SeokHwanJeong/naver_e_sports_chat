@@ -23,13 +23,6 @@ isolateButton.addEventListener("click", async () => {
 // 이 함수의 본문은 컨텐츠 스크립트로 실행됩니다.
 // 현재 페이지
 // test------------------
-function onMouseOverHandler() {
-  header.style.opacity = "1";
-}
-    
-function onMouseOutHandler() {
-  header.style.opacity = "0";
-}
   
 function setPageWatchChat() {
     var windowWidth = window.innerWidth - 20;

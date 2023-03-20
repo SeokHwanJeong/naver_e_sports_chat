@@ -1,28 +1,40 @@
 var flag = true;
-  
-setTimeout(function() {
-    const wideScreenElement = document.querySelector('.nng_btn_control.wide');
+var timeOut = 0;
+
+window.onload = function(){
+    let intervalId = setInterval(function() {
+        var wideScreenElement = document.querySelector('.nng_btn_control.wide');
+        timeOut = timeOut + 1;
+        if(timeOut > 20){
+            clearInterval(intervalId);
+            console.log("time out")
+        }
     
-    wideScreenElement.addEventListener("click", function(){
-        if(flag){
-            setPageWatchChat();
-            flag = false;
+        if (wideScreenElement) {
+            console.log("WideScreenElement is Exist")
+            wideScreenElement.addEventListener("click", function(){
+                if(flag){
+                    setPageWatchChat();
+                    flag = false;
+                }
+                else{
+                    setOriginalChat();
+                    flag = true;
+                }
+            });
+          clearInterval(intervalId);
         }
-        else{
-            setOriginalChat();
-            flag = true;
-        }
-    });
-}, 1000);
+      }, 500);
+}
 
 function onMouseOverHandler() {
-//   const header = document.getElementById("header");
-  header.style.opacity = "1";
+    var element = document.getElementById("header");
+    element.style.opacity = "1";
 }
   
 function onMouseOutHandler() {
-//   const header = document.getElementById("header");
-  header.style.opacity = "0";
+    var element = document.getElementById("header");
+    element.style.opacity = "0";
 }
 
 function setPageWatchChat() {
