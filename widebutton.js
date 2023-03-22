@@ -9,7 +9,6 @@ window.onload = function(){
             clearInterval(intervalId);
             console.log("time out")
         }
-    
         if (wideScreenElement) {
             console.log("WideScreenElement is Exist")
             wideScreenElement.addEventListener("click", function(){
