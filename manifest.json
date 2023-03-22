@@ -11,6 +11,13 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://game.naver.com/esports/*"],
+      "js": ["widebutton.js"],
+      "run_at":"document_idle"
+    }
+  ],
   "action": {
     "default_popup": "popup.html"
   }
