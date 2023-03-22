@@ -3,7 +3,11 @@ var timeOut = 0;
 
 window.onload = function(){
     let intervalId = setInterval(function() {
-        var wideScreenElement = document.querySelector('.nng_btn_control.wide');
+        var wideScreenElement = document.querySelectorAll('[class*="nng_btn_control.wide"]')[0]
+
+        if(!wideScreenElement){
+            var wideScreenElement = document.querySelectorAll('[class*="pzp-pc-viewmode-button"]')[0];
+        }
         timeOut = timeOut + 1;
         if(timeOut > 20){
             clearInterval(intervalId);
@@ -11,6 +15,7 @@ window.onload = function(){
         }
         if (wideScreenElement) {
             console.log("WideScreenElement is Exist")
+            // console.log(wideScreenElement)
             wideScreenElement.addEventListener("click", function(){
                 if(flag){
                     setPageWatchChat();
