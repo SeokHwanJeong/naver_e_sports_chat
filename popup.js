@@ -25,7 +25,7 @@ isolateButton.addEventListener("click", async () => {
 // test------------------
   
 function setPageWatchChat() {
-    var windowWidth = window.innerWidth - 20;
+    var windowWidth = window.innerWidth - 10;
     var windowHeight = window.innerHeight;
     var videoWidth = windowWidth - 360
 
@@ -50,7 +50,8 @@ function setPageWatchChat() {
     var elements = document.querySelectorAll('[class*="live_player_wrap"]');
     var element = elements[0]
     
-    element.style.width = (windowWidth + 55) + "px";
+    element.style.width = (windowWidth + 50) + "px";
+    element.style.backgroundColor  = "rgb(0, 0, 0)";
     
     //live_video_wrap__1LuN7 에서 크기조절
     //live_video_wrap__1LuN7 에서 마진 조절
