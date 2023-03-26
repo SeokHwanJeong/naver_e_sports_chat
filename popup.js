@@ -50,7 +50,7 @@ function setPageWatchChat() {
     var elements = document.querySelectorAll('[class*="live_player_wrap"]');
     var element = elements[0]
     
-    element.style.width = (windowWidth + 50) + "px";
+    element.style.width = (windowWidth + 55) + "px";
     
     //live_video_wrap__1LuN7 에서 크기조절
     //live_video_wrap__1LuN7 에서 마진 조절
@@ -70,7 +70,7 @@ function setPageWatchChat() {
     var elements = document.querySelectorAll('[class*="live_inView"]');
     var element = elements[0]
     
-    element.style.width = videoWidth + "px";
+    element.style.width = (videoWidth+2.5) + "px";
     element.style.height = (videoWidth/1.7) + "px";
     
     if((videoWidth/1.7) > windowHeight){
@@ -82,7 +82,7 @@ function setPageWatchChat() {
     var elements = document.querySelectorAll('[class*="live_pc_content"]');
     var element = elements[0]
     
-    element.style.width = windowWidth + "px";
+    element.style.width = (videoWidth+2.5) + "px";
     element.style.margin = "0px";
     
     var elements = document.querySelectorAll('[class*="live_content_left"]');

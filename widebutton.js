@@ -73,7 +73,7 @@ function setPageWatchChat() {
     var elements = document.querySelectorAll('[class*="live_video_wrap"]');
     var element = elements[0]
     
-    element.style.width = videoWidth + "px";
+    element.style.width = (videoWidth + 2.5) + "px";
     element.style.height = (videoWidth/1.7) + "px";
     element.style.margin = "0px"
     
@@ -86,7 +86,7 @@ function setPageWatchChat() {
     var elements = document.querySelectorAll('[class*="live_inView"]');
     var element = elements[0]
     
-    element.style.width = videoWidth + "px";
+    element.style.width = (videoWidth + 2.5) + "px";
     element.style.height = (videoWidth/1.7) + "px";
     
     if((videoWidth/1.7) > windowHeight){
